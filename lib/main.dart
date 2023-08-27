@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:login_signup/Pages/login_screen.dart';
+import 'package:login_signup/Pages/auth_page.dart';
+// import 'package:login_signup/Pages/login_screen.dart';
 // import 'package:login_signup/Pages/auth_page.dart';
-import 'package:login_signup/Pages/sign_up_page.dart';
+// import 'package:login_signup/Pages/sign_up_page.dart';
 import 'firebase_options.dart';
 
 void main() async {
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(),
-      home: const LoginPage(),
+      home: const AuthPage(),
       //const AuthPage(),
     );
   }

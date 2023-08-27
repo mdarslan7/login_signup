@@ -2,7 +2,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
+  final void Function()? onPressed;
+  const LoginPage({super.key, required this.onPressed});
 
   @override
   State<LoginPage> createState() => _LoginPageState();
@@ -47,6 +48,10 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        title: const Text("Login"),
+      ), 
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(20.0), // Used const here
@@ -99,11 +104,7 @@ class _LoginPageState extends State<LoginPage> {
                   width: double.infinity,
                   height: 45,
                   child: ElevatedButton(
-                    onPressed: () {
-                      if (_formKey.currentState!.validate()) {
-                        print("Validation is Done!");
-                      }
-                    },
+                    onPressed: widget.onPressed,
                     child: const Text("SignUp"),
                   ),
                 ),
